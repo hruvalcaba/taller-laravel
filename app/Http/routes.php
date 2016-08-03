@@ -19,8 +19,11 @@ Route::get('about', function () {
 Route::get('/', 'TodosController@index');
 
 /* ------- TODO ------------------*/
+Route::get('todo/create', 'TodoController@create')->where('id', '[0-9]+');
 
 Route::get('todo/{slug}', 'TodoController@mostrar')->where('slug', '[a-zA-Z-]+');
+
+Route::get('todo/{id}', 'TodoController@show')->where('id','[0,9]+');
 
 Route::get('todo/{id}', function ($id) {
     return view('todos.single')->with('todo', $id);
@@ -34,9 +37,7 @@ Route::put('todo/edit/{id}', function ($id) {
     return view('todos.single')->with('todo', $id);
 })->where('id','[0,9]+');
 
-Route::get('todo/create', function () {
-    return view('todos.single');
-})->where('id','[0,9]+');
+
 
 Route::post('todo/create', function () {
     return view('todos.single');

@@ -16,7 +16,9 @@
             <th>{{ $todo }}</th>
         </tr>
         @endforeach
-        <th><button>+</button></th>
+        <th>
+            <button>+</button>
+        </th>
     </table>
 </body>
 </html>

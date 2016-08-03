@@ -26,7 +26,7 @@ class TodoController extends Controller
      */
     public function create()
     {
-        //
+        return view('todos.add');
     }
 
     /**
@@ -48,7 +48,8 @@ class TodoController extends Controller
      */
     public function show($id)
     {
-        //
+        $id = 1;
+        return view('todos.single')->withTodo($todo);
     }
 
     /**
@@ -59,7 +60,8 @@ class TodoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $id = 1;
+        return view('todos.single')->withTodo($id);
     }
 
     /**
